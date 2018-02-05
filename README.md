@@ -1,2 +1,2 @@
 # ElectronBeamDynamics
-Simulation of electron beam induced dynamics in metalls
+Simulation of electron beam induced dynamics in metallic systems
