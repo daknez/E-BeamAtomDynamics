@@ -55,9 +55,9 @@
 	minelFreq = 700;
 	
 	shottime = 0.2e-12; #shottimestep*dt;
-	waittime = 2e-12 #waitsteps*dt;
-	secdispchecktime = 0.4e-12 # secdispcheckstep*dt;
-	equilibrationtime = 20e-12 # electronFrequ*dt;
+	waittime = 3e-12 #waitsteps*dt;
+	secdispchecktime = 1e-12 # secdispcheckstep*dt;
+	equilibrationtime = 50e-12 # electronFrequ*dt;
 	
 	println("-----------------------------");
 	print_with_color(:green,"Experiment started\n");
@@ -70,6 +70,7 @@
 	theta = 0;
 	atomnr = 0;
 	resetconfig = false;			# reset configuration every electron?
+	fulllog = false;			# write full log at every displacement event (CAUTION: Creates a lot of data!)
 	
 	index = 0;
 	
@@ -492,27 +493,28 @@
 		# Simulation results
 		# ===================
 		if displacement
-			# save variables to file
-			# file = matopen(string(outfilename,"_",element1,"_",nSteps,"steps_elnumber",nel,".mat"),"w")
-			# write(file,"HT",HT);
-			# write(file,"Eel0",Eel0);
-			# write(file,"electron_number",nel);
-			# write(file,"Et",Et);
-			# write(file, "time", time_temp)
-			# write(file,"coords",coord_temp)
-			# #write(file,"coordssub",coordssub)
-			# write(file,"vels",vels_temp)
-			# write(file,"E",E_temp)
-			# write(file,"L",L)
-			# write(file,"subz",subz)
-			# write(file,"sig1",a1)
-			# write(file,"eps1",eps1)
-			# #write(file,"sig2",a2)
-			# #write(file,"eps2",eps2)
-			# write(file,"element1",element1);
-			# #write(file,"element2",element2);
-			# write(file,"countNN",countNN_temp)
-			# close(file)
+			if fulllog
+				# save variables to file
+				file = matopen(string(outfilename,"_",element1,"_",nSteps,"steps_elnumber",nel,".mat"),"w")
+				write(file,"HT",HT);
+				write(file,"Eel0",Eel0);
+				write(file,"electron_number",nel);
+				write(file,"Et",Et);
+				write(file, "time", time_temp)
+				write(file,"coords",coord_temp)
+				write(file,"coordssub",coordssub)
+				write(file,"vels",vels_temp)
+				write(file,"E",E_temp)
+				write(file,"L",L)
+				write(file,"sig1",a1)
+				write(file,"eps1",eps1)
+				#write(file,"sig2",a2)
+				#write(file,"eps2",eps2)
+				write(file,"element1",element1);
+				#write(file,"element2",element2);
+				write(file,"countNN",countNN_temp)
+				close(file)
+			end
 			
 			# write only geometry:
 			#writeXYZ(coords1.*1E10,element1,string("afterexperiment","_eln",nel));
