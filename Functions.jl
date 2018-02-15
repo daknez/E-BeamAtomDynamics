@@ -4,29 +4,6 @@
 # FELMI-ZFE/University of Technology Graz
 # ========================================================================
 
-function randGauss(mu,sigma,nDim)
-	# Generate normally distributed random numbers
-	randNums = randn(nDim,1);
-	
-	# Shift to match given mean and std
-	randNums = mu + randNums * sigma;
-	return randNums
-end
-
-function rndPowerLaw(min,max,a,b)
-	
-	numberfound = false;
-	randnum = 0;
-	while numberfound != true
-		randnum = (-rand()*(b+1)/a).^(1/(b+1));
-		if randnum > min && randnum < max 
-			numberfound = true;
-		end
-	end
-	
-	return randnum
-end
-
 function create_rnd_cluster(nPart,density,Amass)
 	
 	println("creating cluster...")
@@ -36,7 +13,7 @@ function create_rnd_cluster(nPart,density,Amass)
 	rcluster = ((3*nPart*Amass)/(4*pi*density))^(1/3);
 	
 	rmin2 = rmin^2;
-	rmax = 1.3*rcluster;
+	rmax = 1.5*rcluster;
 	L = 2*rmax;
 	
 	accept = 1;
@@ -1181,6 +1158,28 @@ function calcNN(coords,NNthres)
 	return countNN
 end
 
+function randGauss(mu,sigma,nDim)
+	# Generate normally distributed random numbers
+	randNums = randn(nDim,1);
+	
+	# Shift to match given mean and std
+	randNums = mu + randNums * sigma;
+	return randNums
+end
+
+function rndPowerLaw(min,max,a,b)
+	
+	numberfound = false;
+	randnum = 0;
+	while numberfound != true
+		randnum = (-rand()*(b+1)/a).^(1/(b+1));
+		if randnum > min && randnum < max 
+			numberfound = true;
+		end
+	end
+	
+	return randnum
+end
 function MC_Cluster_relaxation(coords1,L,element1,potential,trialsperatom,sampleFreq,startTemp,outfilename)
 	
 	(sig1, eps1, mSC, nSC, C, m) = SetMatParameters(element1,potential);
