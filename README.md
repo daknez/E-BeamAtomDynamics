@@ -1,37 +1,7 @@
-## Welcome to GitHub Pages
+## E-BeamAtomDynamics
 
-You can use the [editor on GitHub](https://github.com/daknez/E-BeamAtomDynamics/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Collection of scripts for the simulation of electron beam induced dynamics in supported metallic clusters. The algorithm uses molecular dynamics, based on the Velocity-Verlet scheme to calculate trajectories of all atoms in a metallic cluster after elastic scattering with a swift electron. Scattering events are sampled randomly from NIST cross section tables. Data for Ni, Au and Ag for 300 keV electrons is stored in the corresponding Matlab data files. Cross section data for other elements and electron energies can be found at https://srdata.nist.gov/srd64/.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+See our paper for details on the algorithm:
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/daknez/E-BeamAtomDynamics/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Knez, D. et al. Modelling electron beam induced dynamics in metallic nanoclusters. Ultramicroscopy 192, 69–79 (2018). DOI: 10.1016/j.ultramic.2018.05.007 (https://www.sciencedirect.com/science/article/pii/S0304399118300184)
