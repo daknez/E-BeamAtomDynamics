@@ -8,4 +8,8 @@ Knez, D. et al. Modelling electron beam induced dynamics in metallic nanocluster
 
 The repository contains following files:
 - MDMain.jl Generates the geometry, sets parameters and calls the single simulation steps.
-- 
+- Thermalize.jl Equilibrates the cluster geometry.
+- Thermalizeoncomplexsubstrate.jl The cluster is landed on an amorphous carbon substrate comprised of single atoms with fixed positions.
+- Experiment.jl Performs the actual electron scattering experiment.
+- Function.jl Contains all functions needed for the calculations.
+- Constants.jl  Contains some constants.
