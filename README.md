@@ -14,3 +14,5 @@ Following files are needed to perform the simulation:
 - Function.jl Contains all functions needed for the calculations.
 - Constants.jl  Contains some constants.
 - Ag300.mat and Au300.mat NIST differential cross section tables
+
+A faster and more flexible implementation of the algorithm can be found here: 
