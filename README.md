@@ -13,6 +13,6 @@ Following files are needed to perform the simulation:
 - Experiment_Dyn.jl Performs the actual electron scattering experiment.
 - Function.jl Contains all functions needed for the calculations.
 - Constants.jl  Contains some constants.
-- Ag300.mat and Au300.mat NIST differential cross section tables
+- Ag300.mat and Au300.mat NIST differential cross section tables for Ag and Au for 300 kV electron energy.
 
 A faster and more flexible implementation of the algorithm can be found here: https://github.com/daknez/E-BeamAtomDynamics-with-PyLAMMPS
